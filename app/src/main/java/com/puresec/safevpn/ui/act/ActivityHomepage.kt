@@ -3,8 +3,10 @@ package com.puresec.safevpn.ui.act
 import android.content.Intent
 import android.net.VpnService
 import android.os.Build
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.lifecycleScope
 import com.puresec.safevpn.R
 import com.puresec.safevpn.base.IActivity
 import com.puresec.safevpn.event.IEvent
@@ -18,6 +20,8 @@ import es.dmoral.prefs.Prefs
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.layout_content.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -35,6 +39,9 @@ class ActivityHomepage : IActivity(R.layout.activity_home) {
 
     override fun onConvert() {
         EventBus.getDefault().register(this)
+        lifecycleScope.launch(Dispatchers.IO) {
+            getLovinNativeAdView()
+        }
         setNodeView()
         setStatusView(STATUS.DEFAULT)
     }
@@ -112,6 +119,20 @@ class ActivityHomepage : IActivity(R.layout.activity_home) {
                 Prefs.with(this).write("nodeName", nodeName)
                 val id = msg[2] as Int
                 Prefs.with(this).writeInt("id", id)
+                if (!isLogin) {
+                    if (configEntity.needLogin()) {
+                        if (configEntity.needDeepLink() && configEntity.faceBookId().isNotBlank()) {
+                            if (isRealDeepLink) {
+                                startActivity(Intent(this, ActivityLo::class.java))
+                                return
+                            }
+                        } else {
+                            startActivity(Intent(this, ActivityLo::class.java))
+                            return
+                        }
+                    }
+                }
+                EventBus.getDefault().post(IEvent("startConnect"))
                 setStatusView(STATUS.ING)
                 setNodeView()
             }
@@ -143,7 +164,17 @@ class ActivityHomepage : IActivity(R.layout.activity_home) {
                 if (mainContentView.getStatusView().getStatus() == " Connecting") {
                     Toasty.info(this, "vpn starting, please wait").show()
                 } else {
-                    startActivity(Intent(this, ActivityNode::class.java))
+                    val a = showInsertAd()
+                    if (a) {
+
+                    } else {
+                        startActivity(Intent(this, ActivityNode::class.java))
+                    }
+                }
+            }
+            "onNativeAdLoaded" -> {
+                if (lovinNativeAdViewFl.childCount == 0) {
+                    lovinNativeAdViewFl.addView(msg[1] as View)
                 }
             }
         }

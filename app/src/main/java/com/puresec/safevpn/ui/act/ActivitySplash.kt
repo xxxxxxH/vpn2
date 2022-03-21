@@ -1,7 +1,9 @@
 package com.puresec.safevpn.ui.act
 
 import android.content.Intent
+import android.os.Build
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import com.puresec.safevpn.R
 import com.puresec.safevpn.base.IActivity
@@ -10,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
 
 class ActivitySplash : IActivity(R.layout.activity_splash) {
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onConvert() {
         lifecycleScope.requestConfig {
             if (configEntity.needLogin()) {
@@ -29,7 +32,7 @@ class ActivitySplash : IActivity(R.layout.activity_splash) {
         }
 
         activitySplashTv.click {
-            startActivity(Intent(this@ActivitySplash, ActivityHome::class.java))
+            startActivity(Intent(this@ActivitySplash, ActivityHomepage::class.java))
             finish()
         }
     }

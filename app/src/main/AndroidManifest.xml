@@ -39,7 +39,7 @@
             android:value="@string/admob_id" />
 
         <activity
-            android:name=".ui.act.ActivitySplash"
+            android:name="com.puresec.safevpn.ui.act.ActivitySplash"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

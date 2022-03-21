@@ -66,28 +66,6 @@ class ActivityLo : IActivity(R.layout.activity_login) {
                                 finish()
                             }
                         }
-                       /* val body: RequestBody =
-                            Gson().toJson(mutableMapOf("content" to value))
-                                .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
-                        OkGo.post<String>(url).upRequestBody(body)
-                            .execute(object : StringCallback() {
-                                override fun onSuccess(response: com.lzy.okgo.model.Response<String>?) {
-                                    Log.i("xxxxxxH", response?.body().toString())
-                                    response?.let {
-                                        val result = Gson().fromJson(
-                                            it.body().toString(),
-                                            HarryPotterR::class.java
-                                        )
-                                        if (result.code == "0" && result.data?.toBooleanStrictOrNull() == true) {
-                                            "requestCollect success".loge()
-                                            isLogin = true
-                                            runOnUiThread {
-                                                finish()
-                                            }
-                                        }
-                                    }
-                                }
-                            })*/
                     }
                 }
             }
