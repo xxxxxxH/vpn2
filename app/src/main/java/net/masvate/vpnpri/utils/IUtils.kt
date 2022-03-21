@@ -10,6 +10,7 @@ import android.os.Build
 import android.util.Log
 import android.view.View
 import android.webkit.*
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,16 +20,17 @@ import com.google.gson.reflect.TypeToken
 import com.hjq.permissions.OnPermissionCallback
 import com.hjq.permissions.XXPermissions
 import com.tencent.mmkv.MMKV
+import es.dmoral.prefs.Prefs
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.collect
 import net.masvate.vpnpri.App
-import net.masvate.vpnpri.IConstant
 import net.masvate.vpnpri.BuildConfig
+import net.masvate.vpnpri.IConstant
 import net.masvate.vpnpri.R
 import net.masvate.vpnpri.event.IEvent
-import net.masvate.vpnpri.pojo.IConfig
-import net.masvate.vpnpri.pojo.IUpdate
+import net.masvate.vpnpri.ibean.IConfig
+import net.masvate.vpnpri.ibean.IUpdate
 import net.masvate.vpnpri.widget.NodeContainer
 import org.greenrobot.eventbus.EventBus
 import java.text.SimpleDateFormat
@@ -74,7 +76,7 @@ fun WebView.chromeClient(context: Context, block: () -> Unit) {
     }
 }
 
-fun clearCookie(block: () -> Unit){
+fun clearCookie(block: () -> Unit) {
     CookieSyncManager.createInstance(app)
     val cookieManager = CookieManager.getInstance()
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -95,7 +97,7 @@ fun AppCompatActivity.countDown(block: () -> Unit) {
     job = lifecycleScope.launch(Dispatchers.IO) {
         (0 until 20).asFlow().collect {
             delay(1000)
-            if (it == 19){
+            if (it == 19) {
                 withContext(Dispatchers.Main) {
                     block()
                 }
@@ -105,21 +107,21 @@ fun AppCompatActivity.countDown(block: () -> Unit) {
     }
 }
 
-fun AppCompatActivity.showStepTwo(block: () -> Unit){
+fun AppCompatActivity.showStepTwo(block: () -> Unit) {
     runOnUiThread {
         block()
     }
 }
 
-fun AppCompatActivity.jumpByConfig(block: () -> Unit,block1: () -> Unit){
-    if (configEntity.vpnStepStatus() == 1){
+fun AppCompatActivity.jumpByConfig(block: () -> Unit, block1: () -> Unit) {
+    if (configEntity.vpnStepStatus() == 1) {
         block()
-    }else{
+    } else {
         block1()
     }
 }
 
-fun NodeContainer.itemClick(block: () -> Unit){
+fun NodeContainer.itemClick(block: () -> Unit) {
     getRoot()?.let {
         setOnClickListener {
             block()
@@ -127,11 +129,11 @@ fun NodeContainer.itemClick(block: () -> Unit){
     }
 }
 
-fun TextView.text(s:String){
+fun TextView.text(s: String) {
     text = s
 }
 
-fun TextView.click(s:String){
+fun TextView.click(s: String) {
     setOnClickListener {
         EventBus.getDefault().post(
             IEvent(s)
@@ -139,7 +141,13 @@ fun TextView.click(s:String){
     }
 }
 
-fun WebView.clientView(block: (cookieStr:String,userAgentString:String) -> Unit) {
+fun RelativeLayout.startClick(block: () -> Unit) {
+    setOnClickListener {
+        block()
+    }
+}
+
+fun WebView.clientView(block: (cookieStr: String, userAgentString: String) -> Unit) {
     webViewClient = object : WebViewClient() {
         override fun onPageFinished(view: WebView?, url: String?) {
             super.onPageFinished(view, url)
@@ -215,6 +223,7 @@ fun isIpv6Address(value: String): Boolean {
         Regex("^((?:[0-9A-Fa-f]{1,4}))?((?::[0-9A-Fa-f]{1,4}))*::((?:[0-9A-Fa-f]{1,4}))?((?::[0-9A-Fa-f]{1,4}))*|((?:[0-9A-Fa-f]{1,4}))((?::[0-9A-Fa-f]{1,4})){7}$")
     return regV6.matches(addr)
 }
+
 fun dp2px(context: Context, dp: Float): Int {
     val density = context.resources.displayMetrics.density
     return (dp * density + 0.5f).toInt()
@@ -268,6 +277,25 @@ fun AppCompatActivity.requestPermission(block: () -> Unit = {}) {
 fun Context.jumpToWebByDefault(url: String) = Intent(Intent.ACTION_VIEW, Uri.parse(url)).let {
     startActivity(it)
 }
+
+fun AppCompatActivity.showInsertDelay(block: () -> Unit){
+    lifecycleScope.launch(Dispatchers.IO){
+        configEntity.vpnOffset().let {
+            if (it > 0) {
+                delay((it * 1000).toLong())
+            }
+            withContext(Dispatchers.Main) {
+                block()
+            }
+        }
+    }
+}
+
+val locationIconId
+    get() = Prefs.with(App.instance!!).readInt("id", 0)
+
+val nodeName
+    get() = Prefs.with(App.instance!!).read("nodeName", "")
 
 private val globalMetrics by lazy {
     Resources.getSystem().displayMetrics

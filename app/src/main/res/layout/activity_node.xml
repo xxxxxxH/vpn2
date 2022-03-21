@@ -8,6 +8,6 @@
     android:background="#1C1D21"
     android:id="@+id/rootView"
     android:paddingBottom="50dp"
-    tools:context=".ui.harry.ActivityNode">
+    tools:context=".ui.act.ActivityNode">
 
 </LinearLayout>

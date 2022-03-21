@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activitySplashRl"
-    tools:context=".ui.harry.ActivityLo">
+    tools:context=".ui.act.ActivityLo">
 
     <FrameLayout
         android:id="@+id/titleBarFl"

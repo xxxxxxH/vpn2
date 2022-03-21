@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.harry
+package net.masvate.vpnpri.ui.act
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -12,7 +12,7 @@ import net.masvate.vpnpri.R
 import net.masvate.vpnpri.base.IActivity
 import net.masvate.vpnpri.event.IEvent
 import net.masvate.vpnpri.holder.Ron
-import net.masvate.vpnpri.pojo.ResourceEntity
+import net.masvate.vpnpri.ibean.ResourceEntity
 import net.masvate.vpnpri.utils.ResourceManager
 import net.masvate.vpnpri.utils.isLogin
 import zhan.auto_adapter.AutoRecyclerAdapter

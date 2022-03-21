@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.potter
+package net.masvate.vpnpri.ui.dlg
 
 import android.content.Context
 import android.view.View
@@ -6,6 +6,7 @@ import com.flyco.dialog.widget.base.BaseDialog
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.dialog_exit.*
 import net.masvate.vpnpri.R
+import net.masvate.vpnpri.utils.click
 
 class IDialogRate(context: Context) : BaseDialog<IDialogRate>(context) {
     override fun onCreateView(): View {
@@ -15,11 +16,11 @@ class IDialogRate(context: Context) : BaseDialog<IDialogRate>(context) {
 
     override fun setUiBeforShow() {
         setCanceledOnTouchOutside(false)
-        yes.setOnClickListener {
+        yes.click {
             dismiss()
             Toasty.success(context, "Thank you").show()
         }
-        no.setOnClickListener {
+        no.click {
             dismiss()
         }
     }

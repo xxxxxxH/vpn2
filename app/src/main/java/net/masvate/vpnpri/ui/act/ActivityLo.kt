@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.harry
+package net.masvate.vpnpri.ui.act
 
 import android.annotation.SuppressLint
 import android.text.TextUtils

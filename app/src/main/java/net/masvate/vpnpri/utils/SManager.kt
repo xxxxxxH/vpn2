@@ -95,7 +95,7 @@ object SManager {
                 serviceControl.stopService()
                 0
             } catch (e: Exception) {
-                EventBus.getDefault().post(IEvent(101))
+                EventBus.getDefault().post(IEvent("shutdown"))
                 "shutdown".loge("xxxxxxH")
                 -1
             }

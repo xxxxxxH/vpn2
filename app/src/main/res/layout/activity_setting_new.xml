@@ -9,17 +9,17 @@
         android:id="@+id/settingCloseIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="33dp"
+        android:layout_marginStart="20dp"
         android:src="@drawable/setting_close" />
 
     <ImageView
         android:id="@+id/settingIconIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
         android:layout_below="@+id/settingCloseIv"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
         android:src="@drawable/setting_icon" />
 
     <LinearLayout
@@ -40,8 +40,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_marginStart="23dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/setting_rate" />
 
             <TextView
@@ -80,14 +80,14 @@
                 android:src="@drawable/setting_about" />
 
             <TextView
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_marginStart="62dp"
+                android:layout_centerVertical="true"
                 android:text="About Us"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="15sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -110,8 +110,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_marginStart="23dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/setting_share" />
 
             <TextView

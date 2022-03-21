@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.harry
+package net.masvate.vpnpri.ui.act
 
 import android.graphics.Typeface
 import android.os.Build
@@ -8,8 +8,10 @@ import androidx.annotation.RequiresApi
 import kotlinx.android.synthetic.main.activity_node.*
 import net.masvate.vpnpri.R
 import net.masvate.vpnpri.base.IActivity
+import net.masvate.vpnpri.event.IEvent
 import net.masvate.vpnpri.utils.*
 import net.masvate.vpnpri.widget.NodeContainer
+import org.greenrobot.eventbus.EventBus
 
 @RequiresApi(Build.VERSION_CODES.N)
 class ActivityNode : IActivity(R.layout.activity_node) {
@@ -41,6 +43,8 @@ class ActivityNode : IActivity(R.layout.activity_node) {
                 item.setString(key)
                 item.itemClick {
                     "$key, $value".loge("xxxxxxH")
+                    EventBus.getDefault().post(IEvent("nodeInfo", key, value))
+                    runOnUiThread { finish() }
                 }
                 parent.addView(item)
             }
@@ -53,7 +57,7 @@ class ActivityNode : IActivity(R.layout.activity_node) {
     private fun setTitleLayout():RelativeLayout{
         val titleRelativeLayout = RelativeLayout(this)
         val p = LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.WRAP_CONTENT)
-        p.topMargin = 40
+        p.topMargin = dp2px(this, 40f)
         titleRelativeLayout.layoutParams = p
         titleRelativeLayout.addView(createTitleBackIcon())
         titleRelativeLayout.addView(createTitleTextView())

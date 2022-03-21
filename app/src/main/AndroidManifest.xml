@@ -25,10 +25,10 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.harry.ActivitySetting"
+            android:name=".ui.act.ActivitySetting"
             android:exported="false" />
         <activity
-            android:name=".ui.harry.ActivityNode"
+            android:name=".ui.act.ActivityNode"
             android:exported="false" />
 
         <meta-data
@@ -39,7 +39,7 @@
             android:value="@string/admob_id" />
 
         <activity
-            android:name=".ui.harry.ActivitySplash"
+            android:name=".ui.act.ActivitySplash"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -49,17 +49,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.harry.ActivityHome"
+            android:name=".ui.act.ActivityHome"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.harry.ActivityLo"
+            android:name=".ui.act.ActivityLo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.harry.HarryPotterLocation"
+            android:name=".ui.act.HarryPotterLocation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.harry.ActivityOther"
+            android:name=".ui.act.ActivityOther"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.act.ActivityHomepage" />
 
         <provider
             android:name=".IFile"

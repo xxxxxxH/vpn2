@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.harry
+package net.masvate.vpnpri.ui.act
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -20,9 +20,9 @@ import kotlinx.coroutines.flow.*
 import net.masvate.vpnpri.R
 import net.masvate.vpnpri.base.IActivity
 import net.masvate.vpnpri.event.IEvent
-import net.masvate.vpnpri.pojo.ResourceEntity
-import net.masvate.vpnpri.ui.potter.IDialogDis
-import net.masvate.vpnpri.ui.potter.IDialogExit
+import net.masvate.vpnpri.ibean.ResourceEntity
+import net.masvate.vpnpri.ui.dlg.IDialogDis
+import net.masvate.vpnpri.ui.dlg.IDialogExit
 import net.masvate.vpnpri.utils.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe

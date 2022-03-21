@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.potter
+package net.masvate.vpnpri.ui.dlg
 
 import android.app.Activity
 import android.content.Context
@@ -15,6 +15,8 @@ import org.greenrobot.eventbus.ThreadMode
 import net.masvate.vpnpri.R
 import net.masvate.vpnpri.base.IActivity
 import net.masvate.vpnpri.event.IEvent
+import net.masvate.vpnpri.utils.click
+import net.masvate.vpnpri.utils.text
 
 class IDialogExit(context: Context, val activity: Activity): BaseDialog<IDialogExit>(context) {
     override fun onCreateView(): View {
@@ -25,24 +27,12 @@ class IDialogExit(context: Context, val activity: Activity): BaseDialog<IDialogE
 
     override fun setUiBeforShow() {
         setCanceledOnTouchOutside(false)
-        findViewById<TextView>(R.id.title).text = "Are you sure to exit the application?"
+        findViewById<TextView>(R.id.title).text("Are you sure to exit the application?")
         (activity as IActivity).lifecycleScope.launch(Dispatchers.IO){
             activity.getLovinNativeAdView()
         }
-        yes.setOnClickListener {
-            EventBus.getDefault().post(
-                IEvent(
-                    "confirmExit"
-                )
-            )
-        }
-        no.setOnClickListener {
-            EventBus.getDefault().post(
-                IEvent(
-                    "cancelExit"
-                )
-            )
-        }
+        yes.click { EventBus.getDefault().post(IEvent("confirmExit",this)) }
+        no.click { dismiss() }
     }
 
     override fun onBackPressed() {

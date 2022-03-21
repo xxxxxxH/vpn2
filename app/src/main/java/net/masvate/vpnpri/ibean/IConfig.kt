@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.pojo
+package net.masvate.vpnpri.ibean
 
 import kotlin.random.Random
 

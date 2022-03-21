@@ -18,9 +18,9 @@ import org.xutils.x
 import net.masvate.vpnpri.IHandler
 import net.masvate.vpnpri.R
 import net.masvate.vpnpri.base.IActivity
-import net.masvate.vpnpri.pojo.IConfig
-import net.masvate.vpnpri.pojo.IResult
-import net.masvate.vpnpri.pojo.IUpdate
+import net.masvate.vpnpri.ibean.IConfig
+import net.masvate.vpnpri.ibean.IResult
+import net.masvate.vpnpri.ibean.IUpdate
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody

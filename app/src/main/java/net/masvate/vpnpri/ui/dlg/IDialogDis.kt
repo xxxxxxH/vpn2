@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.potter
+package net.masvate.vpnpri.ui.dlg
 
 import android.app.Activity
 import android.content.Context
@@ -31,8 +31,8 @@ class IDialogDis(context: Context, val activity: Activity) : BaseDialog<IDialogD
         (activity as IActivity).lifecycleScope.launch(Dispatchers.IO){
             activity.getLovinNativeAdView()
         }
-        yes.click("disconnectConfirm")
-        no.click ("disconnectCancel")
+        yes.click{ EventBus.getDefault().post(IEvent("disconnectConfirm", this))}
+        no.click { dismiss() }
     }
 
     override fun onBackPressed() {

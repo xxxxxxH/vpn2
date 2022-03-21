@@ -65,7 +65,7 @@ class SVpnService : VpnService(), ServiceControl {
 
     override fun startService(parameters: String) {
         " over start ".loge("xxxxxxH")
-        EventBus.getDefault().post(IEvent(100))
+        EventBus.getDefault().post(IEvent("startService"))
         setup(parameters)
     }
 

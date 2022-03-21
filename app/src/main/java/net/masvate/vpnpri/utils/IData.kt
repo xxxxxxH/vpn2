@@ -1,7 +1,7 @@
 package net.masvate.vpnpri.utils
 
 import net.masvate.vpnpri.R
-import net.masvate.vpnpri.pojo.ResourceEntity
+import net.masvate.vpnpri.ibean.ResourceEntity
 
 object ResourceManager {
 

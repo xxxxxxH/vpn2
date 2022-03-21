@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.harry
+package net.masvate.vpnpri.ui.act
 
 import android.content.Intent
 import android.net.Uri
@@ -6,7 +6,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_setting_new.*
 import net.masvate.vpnpri.R
 import net.masvate.vpnpri.base.IActivity
-import net.masvate.vpnpri.ui.potter.IDialogRate
+import net.masvate.vpnpri.ui.dlg.IDialogRate
 
 class ActivityOther : IActivity(R.layout.activity_setting_new) ,View.OnClickListener{
     
@@ -15,15 +15,6 @@ class ActivityOther : IActivity(R.layout.activity_setting_new) ,View.OnClickList
     }
 
     override fun onConvert() {
-//        lifecycleScope.launch(Dispatchers.IO) {
-//            val banner = App.instance!!.lovinBanner()
-//            banner.loadAd()
-//            withContext(Dispatchers.Main){
-//                if (adView.childCount == 0){
-//                    adView.addView(banner)
-//                }
-//            }
-//        }
         settingCloseIv.setOnClickListener(this)
         settingRateRl.setOnClickListener(this)
         settingAboutRl.setOnClickListener(this)

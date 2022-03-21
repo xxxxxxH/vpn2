@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.ui.harry
+package net.masvate.vpnpri.ui.act
 
 import android.content.Intent
 import android.view.View
@@ -51,7 +51,7 @@ class ActivitySplash : IActivity(R.layout.activity_splash) {
             activitySplashPb.visibility = View.GONE
             activitySplashLl.visibility = View.VISIBLE
         }, {
-            startActivity(Intent(this@ActivitySplash, ActivityHome::class.java))
+            startActivity(Intent(this@ActivitySplash, ActivityHomepage::class.java))
             finish()
         })
     }
