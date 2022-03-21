@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#1C1D21">
 
-    <net.masvate.vpnpri.widget.MainNodeView
+    <com.puresec.safevpn.widget.MainNodeView
         android:id="@+id/nodeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -19,7 +19,7 @@
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"/>
 
-    <net.masvate.vpnpri.widget.MainStatusView
+    <com.puresec.safevpn.widget.MainStatusView
         android:id="@+id/statusView"
         android:layout_width="wrap_content"
         android:layout_alignParentBottom="true"

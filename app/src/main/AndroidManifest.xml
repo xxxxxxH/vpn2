@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.masvate.vpnpri">
+    package="com.puresec.safevpn">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -55,9 +55,6 @@
             android:name=".ui.act.ActivityLo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.act.HarryPotterLocation"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ui.act.ActivityOther"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.act.ActivityHomepage" />
@@ -73,7 +70,7 @@
         </provider>
 
         <service
-            android:name="com.miaomiao.vpn.SVpnService"
+            android:name=".utils.SVpnService"
             android:enabled="true"
             android:exported="false"
             android:label="@string/app_name"

@@ -17,6 +17,7 @@
 
     <!--    //test-->
     <!--    //使用lovin测试id 需要把applicationId改成nuuu.huju.bbbn-->
+    <!--    //使用lovin测试id 需要把applicationId改成vgb.example.hhh-->
     <string name="lovin_app_key">XPxZx2V96_iG7pvM4Tnv9Ci2gnTcttWt7PvgH4gkf-2zoyye4GosxpTV1dPNCvzgQPmf6oQpX9k-pQriMIx7HR</string>
     <string name="lovin_insert_ad_id">069977ccb92b2669</string>
     <string name="lovin_native_ad_id">69065a61d0b36520</string>

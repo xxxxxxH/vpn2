@@ -1,4 +1,4 @@
-package net.masvate.vpnpri.event;
+package com.puresec.safevpn.event;
 
 public class IEvent {
 
