@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#1C1D21"
+    android:id="@+id/nodeRoot"
+    android:layout_height="80dp">
+
+    <com.itheima.roundedimageview.RoundedImageView
+        android:id="@+id/nodeIcon"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="28dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        app:riv_oval="true"/>
+
+    <TextView
+        android:id="@+id/nodeString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/nodeIcon"
+        android:text="USA - New York"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/nodeSignal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF" />
+</RelativeLayout>

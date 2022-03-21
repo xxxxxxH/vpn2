@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activitySplashRl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.harry.ActivitySplash">
+
+    <FrameLayout
+        android:id="@+id/activitySplashFlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="#E5F0FF">
+
+        <ProgressBar
+            android:id="@+id/activitySplashPb"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/activitySplashLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+            
+            <TextView
+                android:id="@+id/activitySplashTv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="42dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:text="Start"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/app_activity_splash_icon" />
+
+    <ImageView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icon"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/app_splash_facebook" />
+
+    <FrameLayout
+        android:id="@+id/adView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+</RelativeLayout>

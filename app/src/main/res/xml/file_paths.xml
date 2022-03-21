@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+    <external-HD_path name="car" HD_path="."/>  -->
+    <files-path name="WallPaper" path="."/>  <!--  代表的根目录： Context.getFilesDir()  -->
+    <!--
+    <cache-HD_path name="car" HD_path="." />  -->
+    <cache-path name="cache" path="." />    <!--  //代表的根目录: getCacheDir()    -->
+    <!--
+    <external-files-HD_path name="car" HD_path="." />   -->
+    <external-path name="external_files" path="."/>  <!--  //代表的根目录: Environment.getExternalStorageDirectory()    -->
+
+    <external-path
+        name="files_root"
+        path="Android/data/" />
+    <external-path
+        name="external_storage_root"
+        path="." />
+
+    <root-path
+        name="root_path"
+        path="." />
+</paths>

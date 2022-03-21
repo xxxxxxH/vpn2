@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_exit_bg"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/dialog_rate_title"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dialog_rate_icaon"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-56dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="If you Enjoy this APP."
+        android:textSize="12sp"
+        android:layout_marginTop="13dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please take a Moment to Rate 5 stars !"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thanks for Your Support!"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"/>
+
+    <RatingBar
+        android:id="@+id/dialogRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="26dp"
+        android:progressTint="@color/white"
+        android:progressBackgroundTint="@color/color_yellow"
+        android:numStars="5"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_exit_cancel_bg"
+            android:gravity="center"
+            android:text="Cancel"
+            android:textColor="#2322D4"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/no"
+            android:background="@drawable/dialog_exit_sure_bg"
+            android:gravity="center"
+            android:text="Sure"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_exit_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="Are you sure to disconnect ?"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/title"
+            android:layout_marginStart="11dp"
+            android:src="@drawable/dialog_title" />
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/nad"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_exit_cancel_bg"
+            android:gravity="center"
+            android:text="Cancel"
+            android:textColor="#2322D4"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/no"
+            android:background="@drawable/dialog_exit_sure_bg"
+            android:gravity="center"
+            android:text="Sure"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>
