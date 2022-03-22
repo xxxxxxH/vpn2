@@ -2,6 +2,7 @@ package com.puresec.safevpn.ui.act
 
 import android.graphics.Typeface
 import android.os.Build
+import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
@@ -51,16 +52,15 @@ class ActivityNode : IActivity(R.layout.activity_node) {
                 }
                 parent.addView(item)
             }
-            val lastItem = parent.getChildAt(parent.childCount -1) as NodeContainer
-            lastItem.setDividerShow(false)
         }
 
     }
 
     private fun setTitleLayout():RelativeLayout{
         val titleRelativeLayout = RelativeLayout(this)
-        val p = LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.WRAP_CONTENT)
-        p.topMargin = dp2px(this, 40f)
+        val p = LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,dp2px(this, 50f))
+        p.bottomMargin = dp2px(this, 20f)
+        titleRelativeLayout.gravity = Gravity.CENTER_VERTICAL
         titleRelativeLayout.layoutParams = p
         titleRelativeLayout.addView(createTitleBackIcon())
         titleRelativeLayout.addView(createTitleTextView())
@@ -81,11 +81,11 @@ class ActivityNode : IActivity(R.layout.activity_node) {
     private fun createTitleTextView():TextView{
         val textView = TextView(this)
         val p = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT)
-        p.addRule(RelativeLayout.CENTER_HORIZONTAL)
+        p.addRule(RelativeLayout.CENTER_IN_PARENT)
         textView.layoutParams = p
         textView.text = "Connect"
         textView.textSize = 20f
-        textView.setTextColor(resources.getColor(R.color.white))
+        textView.setTextColor(resources.getColor(R.color.black))
         textView.typeface = Typeface.DEFAULT_BOLD
         return textView
     }

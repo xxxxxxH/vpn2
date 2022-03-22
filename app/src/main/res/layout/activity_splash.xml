@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".ui.act.ActivitySplash">
 
     <FrameLayout
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:background="#E5F0FF">
+        android:background="@drawable/splash_bg">
 
         <ProgressBar
             android:id="@+id/activitySplashPb"

@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <RelativeLayout
         android:id="@+id/mainStatusIcon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/main_icon" />
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/mainIconBottomIv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/main_icon_bottom"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-20dp"/>
+        <com.jackandphantom.circularprogressbar.CircleProgressbar
+            android:id="@+id/mainProgressBar"
+            android:layout_width="169dp"
+            android:layout_height="169dp"
+            app:cpb_roundedCorner="true"
+            app:cpb_foregroundProgressColor="#29F19C"
+            android:layout_centerInParent="true"
+            app:cpb_touchEnabled="true"/>
 
-    <ProgressBar
-        android:id="@+id/mainProgressBar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:progressDrawable="@drawable/progress_bar_bg"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_height="6dp"/>
-</LinearLayout>
+        <ImageView
+            android:layout_width="133dp"
+            android:layout_height="133dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/status_bg"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/status_default_3"/>
+    </RelativeLayout>
+</RelativeLayout>

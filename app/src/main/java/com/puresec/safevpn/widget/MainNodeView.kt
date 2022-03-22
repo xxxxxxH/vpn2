@@ -65,7 +65,6 @@ class MainNodeView : LinearLayout {
     fun setLocationIcon(id: Int) {
         Glide.with(this)
             .load(id)
-            .apply(RequestOptions.bitmapTransform(CircleCrop()))
             .into(location!!)
     }
 }

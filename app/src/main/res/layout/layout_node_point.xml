@@ -2,18 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#1C1D21"
+    android:background="@drawable/node_item_bg"
     android:id="@+id/nodeRoot"
-    android:layout_height="80dp">
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="13dp"
+    android:layout_height="56dp">
 
     <com.itheima.roundedimageview.RoundedImageView
         android:id="@+id/nodeIcon"
-        android:layout_width="23dp"
+        android:layout_width="36dp"
         android:layout_height="23dp"
-        android:layout_marginStart="28dp"
         android:layout_centerVertical="true"
+        android:layout_marginStart="28dp"
         android:scaleType="centerCrop"
-        app:riv_oval="true"/>
+        app:riv_oval="false" />
 
     <TextView
         android:id="@+id/nodeString"
@@ -23,7 +26,7 @@
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/nodeIcon"
         android:text="USA - New York"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="13sp"
         android:textStyle="bold" />
 
@@ -35,10 +38,4 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"/>
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF" />
 </RelativeLayout>

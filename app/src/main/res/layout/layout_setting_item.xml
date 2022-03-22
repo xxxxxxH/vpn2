@@ -18,10 +18,10 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="23dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/arrow_r" />
+        android:layout_marginEnd="23dp"
+        android:src="@drawable/setting_arrow" />
 
     <TextView
         android:id="@+id/settingItemTv"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
         android:layout_centerVertical="true"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp" />
 
 </RelativeLayout>

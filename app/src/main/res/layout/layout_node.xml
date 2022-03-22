@@ -13,29 +13,29 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
         android:src="@drawable/arrow_r" />
 
 
     <TextView
         android:id="@+id/mainLocationTv"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="Select  Location"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <com.shehuan.niv.NiceImageView
         android:id="@+id/mainLocationFlagIv"
-        android:layout_width="24dp"
+        android:layout_width="36dp"
         android:layout_height="24dp"
-        android:layout_marginStart="10dp"
         android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
         android:scaleType="centerCrop"
         app:corner_radius="10dp"
-        app:is_circle="true" />
+        app:is_circle="false" />
 </RelativeLayout>

@@ -4,30 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/mainStatusIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/main_icon" />
-
-
-
     <RelativeLayout
         android:id="@+id/mainOptionRl"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/main_status_bg">
+        android:layout_height="match_parent">
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Start"
-            android:textColor="@color/white"
-            android:textSize="10sp"
-            android:textStyle="bold" />
+            android:src="@drawable/status_default_1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/status_default_2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/status_default_3"/>
     </RelativeLayout>
 </LinearLayout>

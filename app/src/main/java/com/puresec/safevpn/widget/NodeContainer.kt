@@ -19,7 +19,6 @@ class NodeContainer : LinearLayout {
     private var nodeIcon: RoundedImageView? = null
     private var nodeString: TextView? = null
     private var nodeSignal: ImageView? = null
-    private var divider: View? = null
 
     constructor(context: Context) : super(context) {
         initView(context)
@@ -43,7 +42,6 @@ class NodeContainer : LinearLayout {
         nodeIcon = v.findViewById(R.id.nodeIcon)
         nodeString = v.findViewById(R.id.nodeString)
         nodeSignal = v.findViewById(R.id.nodeSignal)
-        divider = v.findViewById(R.id.divider)
         setSignal()
         setItemClick()
         return v
@@ -69,12 +67,6 @@ class NodeContainer : LinearLayout {
     fun setString(content: String) {
         nodeString?.let {
             it.text = content
-        }
-    }
-
-    fun setDividerShow(show: Boolean) {
-        divider?.let {
-            it.visibility = if (show) View.VISIBLE else View.GONE
         }
     }
 

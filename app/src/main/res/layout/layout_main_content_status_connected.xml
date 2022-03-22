@@ -2,24 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="-20dp"
     android:orientation="vertical">
 
-    <ImageView
+
+    <RelativeLayout
         android:id="@+id/mainStatusIcon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/main_stop" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/status_ed"/>
+
+        <ImageView
+            android:layout_width="133dp"
+            android:layout_height="133dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/status_bg" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/status_default_3" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/mainStatusTimeTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-20dp"
         android:text="00:02:50"
-        android:textColor="#9EA6FF"
+        android:textColor="#1BD4BD"
         android:textSize="15sp"
         android:textStyle="bold" />
 </LinearLayout>
