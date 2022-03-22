@@ -61,7 +61,4 @@ dependencies {
     api "com.tapjoy:tapjoy-android-sdk:12.8.1@aar"
     api "com.google.android.gms:play-services-ads-identifier:17.0.0"
 
-    //Admob
-    api "com.anythink.sdk:adapter-admob:5.7.66"
-    api "com.google.android.gms:play-services-ads:20.2.0"
 }

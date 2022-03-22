@@ -21,8 +21,8 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-//        applicationId "vgb.example.hhh"
-        applicationId "com.puresec.safevpn"
+        applicationId "vgb.example.hhh"
+//        applicationId "com.puresec.safevpn"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -111,8 +111,6 @@ dependencies {
     api 'com.applovin.mediation:inmobi-adapter:10.0.3.1'
     api 'com.applovin.mediation:mintegral-adapter:15.6.1.0'
     api 'com.applovin.mediation:tapjoy-adapter:12.9.1.0'
-    api 'com.applovin.mediation:google-ad-manager-adapter:20.6.0.0'
-    api 'com.applovin.mediation:google-adapter:20.6.0.0'
 
     api 'androidx.work:work-runtime:2.7.1'
 

@@ -34,9 +34,6 @@
         <meta-data
             android:name="ScopedStorage"
             android:value="true" />
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_id" />
 
         <activity
             android:name="com.puresec.safevpn.ui.act.ActivitySplash"
