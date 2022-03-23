@@ -121,15 +121,8 @@ class ActivityHomepage : IActivity(R.layout.activity_home) {
                 Prefs.with(this).writeInt("id", id)
                 if (!isLogin) {
                     if (configEntity.needLogin()) {
-                        if (configEntity.needDeepLink() && configEntity.faceBookId().isNotBlank()) {
-                            if (isRealDeepLink) {
-                                startActivity(Intent(this, ActivityLo::class.java))
-                                return
-                            }
-                        } else {
-                            startActivity(Intent(this, ActivityLo::class.java))
-                            return
-                        }
+                        startActivity(Intent(this, ActivityLo::class.java))
+                        return
                     }
                 }
                 EventBus.getDefault().post(IEvent("startConnect"))

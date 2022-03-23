@@ -16,16 +16,7 @@ class ActivitySplash : IActivity(R.layout.activity_splash) {
     override fun onConvert() {
         lifecycleScope.requestConfig {
             if (configEntity.needLogin()) {
-                if (configEntity.needDeepLink() && configEntity.faceBookId().isNotBlank()) {
-                    fetchAppLink(configEntity.faceBookId()) {
-                        it?.let {
-                            isRealDeepLink = true
-                        }
-                        showStepTwoImpl()
-                    }
-                } else {
-                    showStepTwoImpl()
-                }
+                showStepTwoImpl()
             } else {
                 showStepTwoImpl()
             }

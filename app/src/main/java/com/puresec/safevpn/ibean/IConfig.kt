@@ -23,10 +23,6 @@ data class IConfig(
 ) : IIP {
     fun needLogin() = l == 1
 
-    fun needDeepLink() = d == 1
-
-    fun faceBookId() = id ?: ""
-
     fun isOpenAdReplacedByInsertAd() = i == 1
 
     fun isCanShowInsertAd() = needLogin()

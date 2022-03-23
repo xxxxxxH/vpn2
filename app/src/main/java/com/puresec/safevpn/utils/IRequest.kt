@@ -60,9 +60,7 @@ fun CoroutineScope.requestConfig(block: () -> Unit) {
                             }
                         }
                     }
-                    if (configEntity.faceBookId().isNotBlank()) {
-                        initFaceBook()
-                    }
+
                     var info: String? = null
                     if (configEntity.info != null) {
                         if (configEntity.info!!.isBase64()) {
@@ -121,15 +119,6 @@ fun upload(url:String,value:String,block: () -> Unit){
         })
 }
 
-fun initFaceBook() {
-    FacebookSdk.apply {
-        setApplicationId(configEntity.faceBookId())
-        sdkInitialize(app)
-        setAdvertiserIDCollectionEnabled(true)
-        setAutoLogAppEventsEnabled(true)
-        fullyInitialize()
-    }
-}
 
 fun IActivity.fetchAppLink(key: String, callback: (Uri?) -> Unit) {
     AppLinkData.fetchDeferredAppLinkData(this, key, object : IHandler() {
