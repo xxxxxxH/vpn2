@@ -95,11 +95,6 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
 
     api 'org.greenrobot:eventbus:3.3.1'
-    /**
-     * 深度链接
-     */
-    api 'com.facebook.android:facebook-android-sdk:12.3.0'
-    api 'com.parse.bolts:bolts-android:1.4.0'
 
     /**
      * max sdk 和adapters
